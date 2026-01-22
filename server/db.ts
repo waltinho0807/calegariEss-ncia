@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import { drizzle } from "drizzle-orm/node-postgres";
 import pg from "pg";
 import * as schema from "@shared/schema";
@@ -24,12 +27,12 @@ import * as schema from "@shared/schema";
 //if (!process.env.DATABASE_URL) {
 //  throw new Error("DATABASE_URL must be set. Did you forget to provision a database?");
 //}
-//const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.DATABASE_URL;
 
 // --- OPÇÃO 2: SUPABASE (COMENTADO) ---
 // Para usar Supabase, comente a OPÇÃO 1 acima e descomente abaixo:
 // 
-const connectionString = "postgresql://postgres:waltinho@mor4@db.ciceusyzkhjithkcmkik.supabase.co:5432/postgres";
+//
 // 
 // Ou use variável de ambiente:
 // const connectionString = process.env.SUPABASE_DATABASE_URL;
